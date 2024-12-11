@@ -1,0 +1,249 @@
+/* src/styles/bcf.css */
+
+/* Define color variables for easy theme switching */
+:root {
+  --bcf-button-bg: var(--bim-ui_accent-base, #6528d7);
+  --bcf-button-text: var(--bim-ui_accent-contrast, #ffffff);
+  --bcf-button-hover-bg: var(--bim-ui_accent-base-hover, #5420b4);
+  --bcf-bg-base: var(--bim-ui_bg-base, #ffffff);
+  --bcf-bg-contrast-10: var(--bim-ui_bg-contrast-10, #f5f5f5);
+  --bcf-bg-contrast-20: var(--bim-ui_bg-contrast-20, #e0e0e0);
+  --bcf-bg-contrast-40: var(--bim-ui_bg-contrast-40, #bdbdbd);
+  --bcf-bg-contrast-80: var(--bim-ui_bg-contrast-80, #424242);
+  --bcf-bg-contrast-100: var(--bim-ui_bg-contrast-100, #000000);
+}
+
+/* BCF Dialog Styles */
+#bcf-dialog {
+  font-family: var(--bim-ui-font-family, Arial, sans-serif);
+  background-color: var(--bcf-bg-base);
+  color: var(--bcf-bg-contrast-100);
+  border: 1px solid var(--bcf-bg-contrast-20);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+#bcf-dialog h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+  color: var(--bcf-button-bg);
+}
+
+/* Form group styling */
+#bcf-dialog .form-group {
+  margin-bottom: 1rem;
+}
+
+#bcf-dialog label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--bcf-bg-contrast-80);
+}
+
+/* Input field styling */
+#bcf-dialog input[type="text"],
+#bcf-dialog input[type="date"],
+#bcf-dialog select,
+#bcf-dialog textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--bcf-bg-contrast-40);
+  border-radius: 4px;
+  background-color: var(--bcf-bg-contrast-10);
+  color: var(--bcf-bg-contrast-100);
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#bcf-dialog input[type="text"]:focus,
+#bcf-dialog input[type="date"]:focus,
+#bcf-dialog select:focus,
+#bcf-dialog textarea:focus {
+  border-color: var(--bcf-button-bg);
+  box-shadow: 0 0 0 2px rgba(101, 40, 215, 0.2);
+  outline: none;
+}
+
+/* BCF Topic Table Styles */
+#bcf-topic-list-panel {
+  background-color: var(--bcf-bg-base);
+  border: 1px solid var(--bcf-bg-contrast-20);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.bcf-topic-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+  font-size: 0.9rem;
+}
+
+.bcf-topic-table th,
+.bcf-topic-table td {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.bcf-topic-table th {
+  background-color: var(--bcf-bg-contrast-20);
+  font-weight: bold;
+  color: var(--bcf-bg-contrast-80);
+}
+
+.bcf-topic-table tr {
+  background-color: var(--bcf-bg-contrast-10);
+  transition: background-color 0.3s;
+}
+
+.bcf-topic-table tr:hover {
+  background-color: var(--bcf-bg-contrast-20);
+}
+
+/* Action buttons container */
+.bcf-action-buttons {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+/* Button styling (applies to all buttons in BCF components) */
+.bcf-button {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: var(--bcf-button-bg);
+  color: var(--bcf-button-text);
+}
+
+/* Button hover effect */
+.bcf-button:hover {
+  background-color: var(--bcf-button-hover-bg);
+}
+
+/* Ensure text color is appropriate for both light and dark themes */
+.bim-ui-light .bcf-button {
+  color: var(--bim-ui_bg-base);
+}
+
+.bim-ui-dark .bcf-button {
+  color: var(--bim-ui_bg-base);
+}
+
+/* BCF Panel Controls Styles */
+.bcf-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Modal Styles for "See More" functionality */
+.bcf-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bcf-bg-base);
+  color: var(--bcf-bg-contrast-100);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+  max-width: 500px;
+  width: 90%;
+}
+
+.bcf-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bcf-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.bcf-modal-item {
+  background-color: var(--bcf-bg-contrast-10);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.bcf-modal-description {
+  background-color: var(--bcf-bg-contrast-10);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Modal header for dragging */
+.bcf-modal-header {
+  padding: 10px;
+  background-color: var(--bcf-bg-contrast-20);
+  font-weight: bold;
+  cursor: move;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Close button for modal */
+#close-modal {
+  align-self: flex-end;
+  margin-top: 15px;
+}
+
+/* Draggable and Resizable Styles */
+.bcf-draggable {
+  cursor: move;
+}
+
+.bcf-resizable {
+  resize: both;
+  overflow: auto;
+}
+
+.bcf-resizer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--bcf-button-bg);
+  cursor: se-resize;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .bcf-modal {
+    width: 95%;
+  }
+
+  .bcf-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bcf-controls {
+    flex-direction: column;
+  }
+
+  .bcf-topic-table {
+    font-size: 0.8rem;
+  }
+
+  .bcf-action-buttons {
+    flex-direction: column;
+  }
+}
